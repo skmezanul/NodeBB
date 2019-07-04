@@ -15,7 +15,9 @@
     "pretest": "npm run lint",
     "test": "istanbul cover _mocha test",
     "coveralls": "istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-    "test-windows": "_mocha test"
+    "test-windows": "_mocha test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "async": "~1.5.0",
@@ -94,7 +96,8 @@
     "underscore.deep": "^0.5.1",
     "validator": "^6.1.0",
     "winston": "^2.1.0",
-    "xregexp": "~3.1.0"
+    "xregexp": "~3.1.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "coveralls": "^2.11.14",
@@ -133,5 +136,6 @@
       "email": "baris@nodebb.org",
       "url": "https://github.com/barisusakli"
     }
-  ]
+  ],
+  "snyk": true
 }
